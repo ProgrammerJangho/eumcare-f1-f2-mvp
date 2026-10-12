@@ -1,0 +1,633 @@
+{
+  "dataset_version": "0.1",
+  "chief_complaint": {
+    "id": "CC04_diarrhea",
+    "name": "설사",
+    "canonical_term": "설사",
+    "aliases": [
+      {
+        "term": "설사",
+        "applies_canonical_flow": true,
+        "source": {
+          "document": "보건진료소 환자진료지침",
+          "edition": "2025.05",
+          "pdf_page": 18,
+          "printed_page": 14,
+          "section": "01 내과 > 2 설사",
+          "source_text": "설사"
+        },
+        "note": "01 내과 2번 항목의 표제이자 흐름도 시작 상자의 표현. canonical_term과 동일하다."
+      }
+    ]
+  },
+  "source_document": {
+    "title": "보건진료소 환자진료지침",
+    "edition": "2025.05"
+  },
+  "usage_policy": {
+    "purpose": "문진 완결성 점검(항목별 확인됨/미확인) 기준 데이터",
+    "defined_by": "dataset_team",
+    "model_input_fields": [
+      "id",
+      "category",
+      "check_method",
+      "item",
+      "description"
+    ],
+    "excluded_from_model_input": [
+      "metadata",
+      "source",
+      "source_role",
+      "needs_review"
+    ],
+    "note": "metadata.source_flow_outcome은 원문 흐름도의 귀결을 출처 추적용으로 보관하며 모델 입력에는 사용하지 않는다. metadata.observation_group도 모델 입력이 아니라 판정 이후 후처리에만 사용한다. 이 데이터셋은 항목의 확인 여부만 다루고 진단·탈수 정도·응급 여부·의뢰 여부·투약을 판단하지 않는다."
+  },
+  "expression_mapping": {
+    "defined_by": "dataset_team",
+    "note": "주호소 인식을 위한 구어 표현 후보. 지침 원문 근거가 없는 표현이므로 aliases와 분리해 보관하며, source는 부여하지 않는다. 실제 상담 로그 확인 후 조정할 것.",
+    "expressions": [
+      {
+        "term": "설사를 해요",
+        "maps_to": "설사",
+        "source": null,
+        "needs_review": true
+      },
+      {
+        "term": "계속 설사해요",
+        "maps_to": "설사",
+        "source": null,
+        "needs_review": true
+      },
+      {
+        "term": "물처럼 나와요",
+        "maps_to": "설사",
+        "source": null,
+        "needs_review": true
+      },
+      {
+        "term": "변이 묽어요",
+        "maps_to": "설사",
+        "source": null,
+        "needs_review": true
+      }
+    ]
+  },
+  "history_items": [
+    {
+      "id": "DIA_001",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "염증성 장염의 과거력",
+      "description": "염증성 장염의 과거력이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "염증성 장염의 과거력 또는 가족력"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_002",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "염증성 장염의 가족력",
+      "description": "염증성 장염의 가족력이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "염증성 장염의 과거력 또는 가족력"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_003",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "여행력",
+      "description": "여행력이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "여행력 + 발열"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_004",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "여러 사람이 같은 증상",
+      "description": "여러 사람이 같은 증상을 보이는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 식중독 등 의심 판단 상자",
+        "source_text": "여러 사람이 같은 증상 등 식중독 등 의심"
+      },
+      "metadata": {
+        "source_flow_outcome": "보건소 보고"
+      }
+    }
+  ],
+  "check_items": [
+    {
+      "id": "DIA_R001",
+      "category": "red_flag",
+      "check_method": "other",
+      "item": "탈수를 시사하는 체중 감소",
+      "description": "탈수를 시사하는 체중 감소가 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "탈수를 시사하는 체중 감소"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R002",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "발열",
+      "description": "발열이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요",
+        "observation_group": "발열"
+      }
+    },
+    {
+      "id": "DIA_R003",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "저혈압",
+      "description": "저혈압이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R004",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "빈맥",
+      "description": "빈맥이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R005",
+      "category": "red_flag",
+      "check_method": "physical_exam",
+      "item": "피부 탄력 감소",
+      "description": "피부 탄력이 감소했는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R006",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "심한 쇠약감",
+      "description": "심한 쇠약감이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R007",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "혈변",
+      "description": "혈변이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "혈변, 흑색변"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R008",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "흑색변",
+      "description": "흑색변이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "혈변, 흑색변"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R009",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "50세 이후 처음 발생한 만성 설사",
+      "description": "50세 이후 처음 발생한 만성 설사인지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "50세 이후 처음 발생한 만성 설사"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R010",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "진행성 복통",
+      "description": "진행성 복통이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "진행성 복통"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요"
+      }
+    },
+    {
+      "id": "DIA_R011",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "발열",
+      "description": "발열이 있는지 확인한다. 원문은 이 항목을 여행력과 함께 하나의 불릿으로 제시한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "여행력 + 발열"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급 진료 또는 검사가 필요하므로 병원 진료 필요",
+        "observation_group": "발열"
+      }
+    },
+    {
+      "id": "DIA_R012",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "14일 이상 지속되는 설사",
+      "description": "설사가 14일 이상 지속되었는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 14일 이상의 지속성 또는 만성설사 판단 상자",
+        "source_text": "14일 이상의 지속성 또는 만성설사"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    },
+    {
+      "id": "DIA_R013",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "만성설사",
+      "description": "만성설사에 해당하는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 14일 이상의 지속성 또는 만성설사 판단 상자",
+        "source_text": "14일 이상의 지속성 또는 만성설사"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    }
+  ],
+  "validation_notes": [
+    {
+      "id": "VN_001",
+      "type": "document_fact",
+      "note": "CC04의 1차 근거는 PDF 18쪽 / 책자 14쪽의 '01 내과 > 2 설사' 흐름도 하나로 한정했다. 흐름도는 1차 판단 상자에서 '아니오'일 때 '14일 이상의 지속성 또는 만성설사' 판단으로, 다시 '아니오'일 때 '여러 사람이 같은 증상 등 식중독 등 의심' 판단으로 내려간다. 다른 질환 지침이나 일반 의학자료는 섞지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사",
+        "source_text": "설사"
+      }
+    },
+    {
+      "id": "VN_002",
+      "type": "document_fact",
+      "note": "부록 도입부에 이 지침의 사용 범위가 명시되어 있다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 16,
+        "printed_page": null,
+        "section": "부록 > 증상중심의 의사결정지침, 투약 및 처치방법 (표지 다음 안내문)",
+        "source_text": "증상중심의 의사결정지침과 투약 및 처치방법은 보건진료 전담공무원의 원활한 의료행위를 위해 참고용으로 사용한다."
+      }
+    },
+    {
+      "id": "VN_003",
+      "type": "design_decision",
+      "note": "원문 불릿 '발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감'을 DIA_R002~DIA_R006 다섯 항목으로, '혈변, 흑색변'을 DIA_R007~DIA_R008 두 항목으로 분리했다. 각 항목의 source_text에는 원문 불릿 전체를 남겼다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감 / 혈변, 흑색변"
+      }
+    },
+    {
+      "id": "VN_004",
+      "type": "review_needed",
+      "note": "원문 불릿 '염증성 장염의 과거력 또는 가족력'을 DIA_001(과거력)과 DIA_002(가족력)로 분리했다. 상담에서 각각 독립적으로 확인할 수 있기 때문이며, '또는'의 논리 결합은 해석하지 않았다. 두 항목의 확인 여부만 각각 판정하고 '과거력 OR 가족력의 충족 여부'라는 새로운 판정값은 만들지 않는다. 분리에 따른 해석이 포함되어 두 항목 모두 needs_review=true로 표시했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "염증성 장염의 과거력 또는 가족력"
+      }
+    },
+    {
+      "id": "VN_005",
+      "type": "review_needed",
+      "note": "원문 불릿 '여행력 + 발열'을 DIA_003(여행력)과 DIA_R011(발열)로 분리했다. 상담에서 각각 독립적으로 확인할 수 있기 때문이며, '+'가 두 조건의 동시 충족을 요구하는지 여부는 원문만으로 확정되지 않으므로 해석하지 않았다. '여행력 AND 발열'이라는 결합 판정값은 만들지 않고 각 항목의 확인 여부만 판정한다. 두 항목 모두 needs_review=true로 표시했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "여행력 + 발열"
+      }
+    },
+    {
+      "id": "VN_006",
+      "type": "review_needed",
+      "note": "원문 불릿 '14일 이상의 지속성 또는 만성설사'를 DIA_R012(14일 이상 지속되는 설사)와 DIA_R013(만성설사)으로 분리했다. '또는'의 논리 결합은 해석하지 않았으며, 원문은 '만성설사'의 기준 기간을 제시하지 않는다. 14일이 곧 만성의 기준인지도 원문에서 확정할 수 없으므로 두 항목을 동일 관찰로 묶지 않고 각각 유지했고 둘 다 needs_review=true로 표시했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 14일 이상의 지속성 또는 만성설사 판단 상자",
+        "source_text": "14일 이상의 지속성 또는 만성설사"
+      }
+    },
+    {
+      "id": "VN_007",
+      "type": "review_needed",
+      "note": "'탈수를 시사하는 체중 감소'(DIA_R001)는 원문이 체중 감소와 탈수를 하나의 조건으로 묶어 제시한 표현이므로 '체중 감소'와 '탈수'를 별도 항목으로 분리하지 않았다. 원문에 '체중 감소 또는 탈수'라는 표현은 없으며, 어느 정도의 체중 감소가 탈수를 시사하는지에 대한 기준도 제시되어 있지 않다. 확인 방법도 진술·신체계측·임상 판단이 섞여 있어 check_method를 other로 두고 needs_review=true로 표시했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "탈수를 시사하는 체중 감소"
+      }
+    },
+    {
+      "id": "VN_008",
+      "type": "review_needed",
+      "note": "'여러 사람이 같은 증상 등 식중독 등 의심'(DIA_004)은 '등'이 두 번 쓰여 열거가 완결적이지 않다. 확인 가능한 사실인 '여러 사람이 같은 증상'만 항목화했고, '식중독 등 의심'은 판단에 해당하므로 항목으로 만들지 않았다. needs_review=true로 표시했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 식중독 등 의심 판단 상자",
+        "source_text": "여러 사람이 같은 증상 등 식중독 등 의심"
+      }
+    },
+    {
+      "id": "VN_009",
+      "type": "design_decision",
+      "note": "check_method 분리는 지침 본문이 문진(2-1-1)과 신체검진기술(2-1-2), 신체검진내용(2-1-3, 활력징후 측정 및 신체계측 포함)을 별도로 규정하고 있는 데 근거한다. 다만 개별 항목을 어느 방법에 배정할지는 데이터셋 팀의 설계 결정이며 설사 원문이 항목별 확인 방법을 지정한 것은 아니다. 의료인 자문 전 잠정값이다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 5,
+        "printed_page": 1,
+        "section": "2. 보건진료 전담공무원이 행하는 진찰 및 검사기준 > 2-1. 건강상태 평가에 필요한 기술수준",
+        "source_text": "2-1-1. 문진 / 2-1-2. 신체검진기술 / 2-1-3. 신체검진내용 - 활력징후 측정 및 신체계측"
+      }
+    },
+    {
+      "id": "VN_010",
+      "type": "review_needed",
+      "note": "check_method 배정에 검토가 필요한 항목. DIA_R002·DIA_R011(발열)은 체온 측정을 전제로 vital_sign으로 두었으나 원문이 확인 방법을 지정하지 않았다(CC03 HA_R001과 동일한 사유). DIA_R001(탈수를 시사하는 체중 감소)은 확인 방법이 하나로 특정되지 않아 other로 두었다. DIA_R005(피부 탄력 감소)는 촉진으로 확인한다고 보아 physical_exam으로 두었다. DIA_R006(심한 쇠약감)은 환자 진술로 두었으나 관찰로도 확인될 수 있다. 허용값 외의 새로운 check_method는 만들지 않았다.",
+      "source": null
+    },
+    {
+      "id": "VN_011",
+      "type": "review_needed",
+      "note": "원문에 정량 기준이 없는 항목. DIA_R002·DIA_R011(고열/발열의 체온 기준 없음), DIA_R003(저혈압의 혈압 기준 없음), DIA_R004(빈맥의 맥박수 기준 없음), DIA_R005(피부 탄력 감소의 정도 기준 없음), DIA_R006('심한' 쇠약감의 기준 없음), DIA_R009·DIA_R013('만성'의 기간 기준 없음), DIA_R001(탈수를 시사하는 체중 감소의 감소량 기준 없음). 임의 기준을 부여하지 않았으므로 어노테이션 가이드 작성 단계에서 기준 합의가 필요하다. needs_review는 정량 기준 부재만으로 일괄 부여하지 않고 CC01~CC03과 같은 기준(원문 표현 자체가 모호하거나 데이터셋 팀의 해석이 들어간 경우)으로 부여했다.",
+      "source": null
+    },
+    {
+      "id": "VN_012",
+      "type": "design_decision",
+      "note": "원문 1차 판단 상자의 항목 중 병력 문진 성격인 염증성 장염의 과거력·가족력(DIA_001, DIA_002)과 여행력(DIA_003)은 history_items에, 나머지 위험신호 성격 항목은 check_items(category = red_flag)에 배치했다. '여러 사람이 같은 증상'(DIA_004)은 역학 확인 성격이고 흐름도 귀결도 보건소 보고이므로 history_items에 두었다. 이는 CC03에서 '최근 치과 치료 및 감염질환 병력'을 history_items에 배치한 것과 같은 기준이며, 배열 배치는 category를 따르고 check_method를 따르지 않는다.",
+      "source": null
+    },
+    {
+      "id": "VN_013",
+      "type": "design_decision",
+      "note": "observation_group은 서로 다른 확인 항목이 동일한 관찰 사실을 의미적으로 완전히 공유하는 경우에만 부여하는 데이터셋 팀 정의 필드(defined_by = dataset_team)이며 원문에 존재하는 개념이 아니다. 판정 기준은 양방향이다. 항목 A를 확인하는 상담 진술이 항목 B도 확인하고, 항목 B를 확인하는 상담 진술도 항목 A를 확인하는지를 의미적으로 비교해, 양방향이 모두 성립하면 동일 관찰로 보아 같은 그룹을 부여하고, 한 방향만 성립하면 서로 다른 조건이므로 그룹을 부여하지 않는다. 그룹 키는 한국어 관찰명을 사용한다(예: \"구토\"). 관계가 없는 항목에는 필드를 두지 않고 생략한다.",
+      "source": null
+    },
+    {
+      "id": "VN_014",
+      "type": "design_decision",
+      "note": "observation_group은 model_input_fields에 포함하지 않는다. LLM에는 id·category·check_method·item·description 다섯 필드만 입력하며, 항목별 원시 판정 결과는 그대로 보존한다. 그룹은 판정 이후 후처리에서만 사용해 화면 중복 표시를 제거하고 완결성 통계를 보정한다. 예를 들어 원시 판정에서 두 항목이 각각 확인으로 나오더라도 화면과 통계에서는 해당 관찰 1건으로 계산한다. 임상적 맥락이나 위험도 라벨을 그룹 키로 사용하지 않는다.",
+      "source": null
+    },
+    {
+      "id": "VN_015",
+      "type": "design_decision",
+      "note": "DIA_R002와 DIA_R011에 observation_group = \"발열\"을 부여했다. 두 항목은 원문에서 각각 '발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감' 불릿과 '여행력 + 발열' 불릿에 속해 출처가 다르지만, 확인 내용은 둘 다 발열 여부로 동일하다. '열이 나요'라는 진술이 양쪽을 모두 확인시키고 그 역도 성립하므로 양방향 판정 기준을 충족한다. 두 항목의 원시 판정과 각각의 source·source_text는 그대로 유지하며 후처리에서만 발열 1건으로 합산한다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사 > 흐름도 1차 판단 상자",
+        "source_text": "발열, 저혈압, 빈맥, 피부 탄력 감소, 심한 쇠약감 / 여행력 + 발열"
+      }
+    },
+    {
+      "id": "VN_016",
+      "type": "design_decision",
+      "note": "observation_group 후보를 검토했으나 양방향 동일 관찰이 아니어서 제외한 사례. (1) DIA_R007(혈변)과 DIA_R008(흑색변)은 같은 원문 불릿에서 나왔고 둘 다 변의 출혈성 상태를 가리키지만, '피가 섞여 나와요'는 혈변만 확인시키고 흑색변은 확인시키지 못하므로 양방향이 성립하지 않는다. 출혈성 변이라는 상위 개념만으로 묶지 않았다. (2) DIA_R012(14일 이상 지속되는 설사)와 DIA_R013(만성설사)은 원문이 '또는'으로 병렬 제시했으나 만성의 기준 기간이 없어 두 표현이 같은 관찰인지 확정할 수 없다. 판정이 애매하므로 그룹을 만들지 않았다. (3) DIA_R009(50세 이후 처음 발생한 만성 설사)와 DIA_R013(만성설사)은 전자가 연령과 초발 조건을 추가로 포함하므로 한 방향만 성립한다. (4) DIA_R001(탈수를 시사하는 체중 감소)과 DIA_R012(14일 이상 지속되는 설사)는 한 상담 문장에서 함께 나타날 수 있으나 서로 다른 관찰이므로 묶지 않았다.",
+      "source": null
+    },
+    {
+      "id": "VN_017",
+      "type": "excluded",
+      "note": "설사 흐름도의 치료·검사·의뢰·보고 관련 내용은 확인 항목으로 만들지 않았다. 제외 대상은 '응급 진료 또는 검사가 필요하므로 병원 진료 필요', '의사에게 의뢰', '보건소 보고', '설사에 대한 대증치료 2~3일', '호전 없음', '관찰', '유발 요인이 있다고 생각되면 생활습관 교육'이다. 흐름도 귀결은 각 항목의 metadata.source_flow_outcome에만 출처 추적용으로 남겼고 모델 입력에는 사용하지 않는다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 2 설사",
+        "source_text": "설사에 대한 대증치료 2~3일 / 관찰 / 유발 요인이 있다고 생각되면 생활습관 교육"
+      }
+    },
+    {
+      "id": "VN_018",
+      "type": "excluded",
+      "note": "책자 15쪽 / PDF 19쪽의 '설사의 대증 치료'에 있는 약물, 경구 포도당 전해질 용액 제조법, 식이 지도 내용은 치료·처방 정보이므로 모델 입력에서 전면 제외했다. '유발 요인이 있다고 생각되면 생활습관 교육'의 유발 요인도 교육·조치 상자에서 파생되는 항목이므로 확인 항목으로 만들지 않았다(CC02에서 '흡연자 → 금연 교육' 파생 항목을 제외한 것과 같은 기준). 유발 요인 문진을 별도 항목으로 둘지 여부는 의료인 자문에서 결정할 것.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 19,
+        "printed_page": 15,
+        "section": "01 내과 > 2 설사 > 설사의 대증 치료",
+        "source_text": "설사의 대증 치료"
+      }
+    },
+    {
+      "id": "VN_019",
+      "type": "excluded",
+      "note": "일반적인 설사 문진에서 흔히 쓰이는 항목(설사 횟수, 변의 양상과 색, 최근 섭취 음식, 항생제 복용력, 유당 불내성, 구토 동반 여부, 복통 부위 등)은 PDF 18쪽 설사 흐름도에 없으므로 생성하지 않았다. 힌트로 제시된 '체중 감소 또는 탈수', '고령에서 처음 발생한 만성 설사'도 원문 표현이 아니어서 사용하지 않았고, 원문 표현인 '탈수를 시사하는 체중 감소'와 '50세 이후 처음 발생한 만성 설사'를 그대로 사용했다. '급성/아급성/만성' 같은 지속기간 분류는 설사 흐름도에 없으므로 만들지 않았다(CC02 기침 흐름도에는 있으나 설사 흐름도에는 없다).",
+      "source": null
+    },
+    {
+      "id": "VN_020",
+      "type": "design_decision",
+      "note": "aliases에는 원문에서 직접 확인되는 '설사'만 등록했다. 원문 근거가 없는 구어 표현(설사를 해요, 계속 설사해요, 물처럼 나와요, 변이 묽어요)은 expression_mapping으로 분리해 source 없이 보관하며 needs_review=true로 두었다. priority 필드는 원문에 우선순위 표현이 없으므로 만들지 않았고 source_role로 원문에서의 위치만 기록한다.",
+      "source": null
+    },
+    {
+      "id": "VN_021",
+      "type": "document_fact",
+      "note": "PDF 쪽 번호와 책자 인쇄 쪽 번호는 4쪽 차이가 난다(책자 14쪽 = PDF 18쪽). 모든 source의 pdf_page와 printed_page는 이 대응관계로 기록했다. 부록 안내문 쪽(PDF 16)처럼 인쇄 쪽번호가 표기되지 않은 면은 printed_page를 null로 두었다.",
+      "source": null
+    }
+  ]
+}

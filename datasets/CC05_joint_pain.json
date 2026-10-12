@@ -1,0 +1,402 @@
+{
+  "dataset_version": "0.2",
+  "chief_complaint": {
+    "id": "CC05_joint_pain",
+    "name": "관절통",
+    "canonical_term": "관절통",
+    "aliases": [
+      {
+        "term": "관절통",
+        "applies_canonical_flow": true,
+        "source": {
+          "document": "보건진료소 환자진료지침",
+          "edition": "2025.05",
+          "pdf_page": 29,
+          "printed_page": 25,
+          "section": "02 외과, 정형외과 > 5 관절통",
+          "source_text": "5 관절통"
+        },
+        "note": "02 외과, 정형외과 5번 항목의 표제이자 CC05의 canonical chief complaint. CC05의 확인 항목은 모두 이 지침에서 나왔다."
+      }
+    ]
+  },
+  "source_document": {
+    "title": "보건진료소 환자진료지침",
+    "edition": "2025.05"
+  },
+  "usage_policy": {
+    "purpose": "문진 완결성 점검(항목별 확인됨/미확인) 기준 데이터",
+    "defined_by": "dataset_team",
+    "model_input_fields": [
+      "id",
+      "category",
+      "check_method",
+      "item",
+      "description"
+    ],
+    "excluded_from_model_input": [
+      "metadata",
+      "source",
+      "source_role",
+      "needs_review",
+      "scope_reference"
+    ],
+    "note": "metadata.source_flow_outcome과 metadata.observation_group은 모델 입력에 사용하지 않고 후처리 및 출처 추적에만 사용한다. 최상위 scope_reference도 처치 가능 범위의 근거일 뿐 문진 확인 항목이 아니므로 모델 입력에 사용하지 않는다. 이 데이터셋은 항목의 확인 여부만 다루고 진단·응급 여부·의뢰 여부·투약을 판단하지 않는다."
+  },
+  "scope_reference": {
+    "defined_by": "dataset_team",
+    "note": "보건진료 전담공무원의 처치 가능 범위 근거. 문진 확인 항목이 아니므로 history_items·check_items와 분리해 보관하며 모델 입력에 사용하지 않는다.",
+    "entries": [
+      {
+        "id": "MSK_S001",
+        "source_role": "scope_reference",
+        "fact": "단순근육통, 관절통, 요통은 보건진료 전담공무원이 치료할 수 있는 증상 및 질환(내과 영역)에 포함된다.",
+        "source": {
+          "document": "보건진료소 환자진료지침",
+          "edition": "2025.05",
+          "pdf_page": 6,
+          "printed_page": 2,
+          "section": "4. 보건진료 전담공무원이 처치할 수 있는 통상적인 질병의 종류 및 처치방법 > 4-1-1. 내과 영역",
+          "source_text": "4-1-1-7. 단순근육통, 관절통, 요통, 단순빈혈"
+        }
+      },
+      {
+        "id": "MSK_S002",
+        "source_role": "scope_reference",
+        "fact": "관절염과 디스크는 의사의 진단 후 치료가이드라인에 의해 진료 가능한 질환(외과 영역)으로 규정되어 있으며, 2주 이내에 호전이 없으면 의사에게 재의뢰한다.",
+        "source": {
+          "document": "보건진료소 환자진료지침",
+          "edition": "2025.05",
+          "pdf_page": 7,
+          "printed_page": 3,
+          "section": "4-2. 보건진료 전담공무원이 의사의 진단 후 치료가이드라인에 의한 진료 가능한 질환 > 4-2-9. 외과 영역",
+          "source_text": "4-2-9. 외과 영역 - 관절염, 디스크"
+        }
+      }
+    ]
+  },
+  "expression_mapping": {
+    "defined_by": "dataset_team",
+    "note": "주호소 인식을 위한 구어 표현 후보. 지침 원문 근거가 없는 표현이므로 aliases와 분리해 보관하며, source는 부여하지 않는다. 대응하는 확인 항목이 없는 증상으로 매핑되는 표현과 분류가 애매한 표현은 넣지 않았다(VN_020, VN_021). 실제 상담 로그 확인 후 조정할 것.",
+    "expressions": [
+      {
+        "term": "관절이 아파요",
+        "maps_to": "관절통",
+        "source": null,
+        "needs_review": true
+      },
+      {
+        "term": "무릎이 아파요",
+        "maps_to": "관절통",
+        "source": null,
+        "needs_review": true
+      }
+    ]
+  },
+  "history_items": [],
+  "check_items": [
+    {
+      "id": "MSK_R001",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "대증적 치료로 호전이 없음",
+      "description": "대증적 치료로 호전이 없는지 확인한다.",
+      "source_role": "direct_guideline_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "대증적인 치료(소염진통제 + 근이완제 + 급성기가 아닐 때의 뜨거운 찜질 등)로 호전이 없거나 반복적으로 같은 증상이 생기면 의사에게 의뢰하여 원인에 대한 정밀 검사 및 치료를 받도록 한다."
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰하여 원인에 대한 정밀 검사 및 치료"
+      }
+    },
+    {
+      "id": "MSK_R002",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "반복적으로 같은 증상이 생김",
+      "description": "반복적으로 같은 증상이 생기는지 확인한다.",
+      "source_role": "direct_guideline_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "대증적인 치료(소염진통제 + 근이완제 + 급성기가 아닐 때의 뜨거운 찜질 등)로 호전이 없거나 반복적으로 같은 증상이 생기면 의사에게 의뢰하여 원인에 대한 정밀 검사 및 치료를 받도록 한다."
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰하여 원인에 대한 정밀 검사 및 치료"
+      }
+    },
+    {
+      "id": "MSK_R003",
+      "category": "red_flag",
+      "check_method": "physical_exam",
+      "item": "관절이 부어 있음",
+      "description": "관절이 부어 있는지 확인한다.",
+      "source_role": "direct_guideline_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "관절이 부어 있으며 열감이 있는 등 관절 내 감염이 의심될 경우에는 바로 의사에게 진료를 받도록 한다."
+      },
+      "metadata": {
+        "source_flow_outcome": "바로 의사에게 진료"
+      }
+    },
+    {
+      "id": "MSK_R004",
+      "category": "red_flag",
+      "check_method": "physical_exam",
+      "item": "관절의 열감",
+      "description": "관절에 열감이 있는지 확인한다.",
+      "source_role": "direct_guideline_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "관절이 부어 있으며 열감이 있는 등 관절 내 감염이 의심될 경우에는 바로 의사에게 진료를 받도록 한다."
+      },
+      "metadata": {
+        "source_flow_outcome": "바로 의사에게 진료"
+      }
+    }
+  ],
+  "validation_notes": [
+    {
+      "id": "VN_001",
+      "type": "scope_decision",
+      "note": "CC05의 canonical chief complaint는 '관절통'으로 확정한다. 2025년 5월 지침에서 단순근육통·관절통·요통 중 상세 의사결정지침이 존재하는 것은 관절통뿐이며(VN_003), CC05의 확인 항목 네 개도 모두 '02 외과, 정형외과 > 5 관절통'에서 나왔다. 따라서 주호소·지침·데이터셋이 1:1로 대응하도록 v0.1의 상위 분류명 '근골격계 통증'을 버리고 id를 CC05_musculoskeletal_pain에서 CC05_joint_pain으로 변경했다. '근골격계 통증'은 지침 원문에 없는 팀 정의 표현이었다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 6,
+        "printed_page": 2,
+        "section": "4. 보건진료 전담공무원이 처치할 수 있는 통상적인 질병의 종류 및 처치방법 > 4-1-1. 내과 영역",
+        "source_text": "4-1-1-7. 단순근육통, 관절통, 요통, 단순빈혈"
+      }
+    },
+    {
+      "id": "VN_002",
+      "type": "document_fact",
+      "note": "단순근육통, 관절통, 요통은 보건진료 전담공무원이 치료할 수 있는 증상 및 질환(내과 영역)에 포함된다. 이 사실은 처치 가능 범위의 근거일 뿐 문진 체크리스트가 아니므로 history_items·check_items에 넣지 않고 최상위 scope_reference 블록과 이 노트에만 기록했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 6,
+        "printed_page": 2,
+        "section": "4. 보건진료 전담공무원이 처치할 수 있는 통상적인 질병의 종류 및 처치방법 > 4-1-1. 내과 영역",
+        "source_text": "4-1-1-7. 단순근육통, 관절통, 요통, 단순빈혈"
+      }
+    },
+    {
+      "id": "VN_003",
+      "type": "document_fact",
+      "note": "관절통의 상세 지침은 '02 외과, 정형외과 > 5 관절통'(PDF 29쪽 / 책자 25쪽)에 존재하며, CC05의 확인 항목은 전부 이 위치에서만 추출했다. 다른 주호소와 달리 이 지침은 흐름도가 아니라 세 개의 서술형 불릿으로만 구성되어 있다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "5 관절통"
+      }
+    },
+    {
+      "id": "VN_004",
+      "type": "design_decision",
+      "note": "관절통 지침에 흐름도가 없으므로 source_role에 direct_flowchart_item 대신 direct_guideline_item을 사용했다. CC01~CC04는 모두 흐름도 기반이어서 direct_flowchart_item을 썼으나, 서술형 불릿에서 추출한 항목을 흐름도 항목이라고 표기하면 출처 성격을 잘못 기록하게 된다. scope_reference는 처치 가능 범위 근거에만 사용하며 확인 항목에는 쓰지 않는다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "5 관절통"
+      }
+    },
+    {
+      "id": "VN_005",
+      "type": "document_fact",
+      "note": "지침 전체를 검색한 결과 '근육통'에 대한 독립된 상세 의사결정지침이나 문진 흐름은 존재하지 않는다. '근육통'은 처치 가능 범위 목록의 '단순근육통'(PDF 6쪽 / 책자 2쪽)과 피부과 참진드기 물림 항목의 동반 증상 나열(PDF 33쪽 / 책자 29쪽, '발열/오한/두통/근육통 등 증상이 있는 경우')에서만 확인된다. 후자는 곤충물림 지침의 항목이므로 CC05에 포함하지 않았다. 따라서 근육통 관련 확인 항목은 하나도 만들지 않았고, 일반적인 근육통 문진(통증 강도, 부위, 운동량, 직업, 자세 등)을 의학 지식으로 생성하지 않았다. 근육통은 CC05의 canonical 범위 밖이며, 상세 문진 데이터셋을 구축하지 않은 별도 주호소 후보로 남겨둔다(scope_reference에 처치 가능 범위 사실만 보존).",
+      "source": null
+    },
+    {
+      "id": "VN_006",
+      "type": "document_fact",
+      "note": "지침 전체를 검색한 결과 '요통'에 대한 독립된 상세 의사결정지침이나 문진 흐름은 존재하지 않는다. '요통'은 처치 가능 범위 목록(PDF 6쪽 / 책자 2쪽)에서만 확인된다. 관련해 '4-2-9. 외과 영역 - 관절염, 디스크'가 의사의 진단 후 치료가이드라인에 의해 진료 가능한 질환으로 제시되지만 이는 질환 범위 규정이며 요통 문진 기준이 아니다. 따라서 요통 관련 확인 항목은 하나도 만들지 않았고, 일반적인 요통 문진(방사통, 저림, 근력저하, 보행장애, 야간통 등)을 생성하지 않았다. 요통은 CC05의 canonical 범위 밖이며, 상세 문진 데이터셋을 구축하지 않은 별도 주호소 후보로 남겨둔다(scope_reference에 처치 가능 범위 사실만 보존).",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 7,
+        "printed_page": 3,
+        "section": "4-2. 보건진료 전담공무원이 의사의 진단 후 치료가이드라인에 의한 진료 가능한 질환 > 4-2-9. 외과 영역",
+        "source_text": "4-2-9. 외과 영역 - 관절염, 디스크"
+      }
+    },
+    {
+      "id": "VN_007",
+      "type": "design_decision",
+      "note": "CC05의 확인 항목은 전부 '02 외과, 정형외과 > 5 관절통'(PDF 29쪽 / 책자 25쪽)에서 나왔으며 source.section으로 확인할 수 있다. 단순근육통·요통은 CC05 범위 밖이지만, 세 증상이 함께 처치 가능 범위로 규정되어 있다는 사실은 최상위 scope_reference에 '4-1-1-7. 단순근육통, 관절통, 요통, 단순빈혈'로 보존했다. 서로 다른 출처의 항목을 같은 지침에서 나온 것처럼 합치지 않았다.",
+      "source": null
+    },
+    {
+      "id": "VN_008",
+      "type": "design_decision",
+      "note": "원문 둘째 불릿에서 치료 관련 표현을 제외하고 확인 조건만 MSK_R001(대증적 치료로 호전이 없음)과 MSK_R002(반복적으로 같은 증상이 생김) 두 항목으로 분리했다. '또는'의 논리 결합은 해석하지 않았으며 두 조건의 충족 조합을 판정값으로 만들지 않는다. 셋째 불릿도 MSK_R003(관절이 부어 있음)과 MSK_R004(관절의 열감) 두 항목으로 분리했다. 네 항목 모두 source_text에 원문 문장 전체를 그대로 남겼다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "대증적인 치료(소염진통제 + 근이완제 + 급성기가 아닐 때의 뜨거운 찜질 등)로 호전이 없거나 반복적으로 같은 증상이 생기면 의사에게 의뢰하여 원인에 대한 정밀 검사 및 치료를 받도록 한다. / 관절이 부어 있으며 열감이 있는 등 관절 내 감염이 의심될 경우에는 바로 의사에게 진료를 받도록 한다."
+      }
+    },
+    {
+      "id": "VN_009",
+      "type": "design_decision",
+      "note": "셋째 불릿의 '관절 내 감염이 의심될 경우'는 관찰이 아니라 판단이므로 확인 항목으로 만들지 않았다. 확인 가능한 사실인 부종과 열감만 항목화했다. 첫째 불릿('여러 관절염뿐 아니라 관절, 인대, 활액막 등 여러 원인에 의해 통증이 발생')은 원인에 대한 설명이며 확인 항목이 아니므로 데이터 항목으로 만들지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "여러 관절염뿐 아니라 관절, 인대, 활액막 등 여러 원인에 의해 통증이 발생"
+      }
+    },
+    {
+      "id": "VN_010",
+      "type": "review_needed",
+      "note": "원문 표현이 '등'으로 끝나 열거가 완결적이지 않은 곳이 두 군데 있다('관절이 부어 있으며 열감이 있는 등', '여러 원인에 의해'의 앞 열거). 명시된 관찰만 데이터화했고 '등'에 해당할 수 있는 추가 소견은 임의로 생성하지 않았다.",
+      "source": null
+    },
+    {
+      "id": "VN_011",
+      "type": "design_decision",
+      "note": "check_method 분리는 지침 본문이 문진(2-1-1)과 신체검진기술(2-1-2), 신체검진내용(2-1-3)을 별도로 규정하고 있는 데 근거한다. 다만 개별 항목을 어느 방법에 배정할지는 데이터셋 팀의 설계 결정이며 관절통 원문이 항목별 확인 방법을 지정한 것은 아니다. MSK_R003과 MSK_R004는 시진·촉진으로 확인한다고 보아 physical_exam으로, MSK_R001과 MSK_R002는 경과에 대한 환자 진술로 확인한다고 보아 patient_report로 두었다. 의료인 자문 전 잠정값이다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 5,
+        "printed_page": 1,
+        "section": "2. 보건진료 전담공무원이 행하는 진찰 및 검사기준 > 2-1. 건강상태 평가에 필요한 기술수준",
+        "source_text": "2-1-1. 문진 / 2-1-2. 신체검진기술 / 2-1-3. 신체검진내용"
+      }
+    },
+    {
+      "id": "VN_012",
+      "type": "review_needed",
+      "note": "원문에 정량 기준이 없는 항목. MSK_R001(무엇을 얼마 동안 치료한 상태를 '호전이 없음'으로 볼지 기준 없음), MSK_R002('반복적'의 횟수·기간 기준 없음), MSK_R003(부종의 정도 기준 없음), MSK_R004(열감의 정도 기준 없음). 임의 기준을 부여하지 않았으며, needs_review는 CC01~CC04와 같은 기준(원문 표현 자체가 모호하거나 데이터셋 팀의 해석이 들어간 경우)으로 MSK_R001과 MSK_R002에만 부여했다.",
+      "source": null
+    },
+    {
+      "id": "VN_013",
+      "type": "design_decision",
+      "note": "history_items는 비어 있다. 관절통 지침의 세 불릿 중 병력 문진 성격의 항목이 없고, MSK_R002(반복적으로 같은 증상이 생김)는 CC01의 ABD_R012(같은 문제로 반복상담 또는 양상변화)와 같은 성격이므로 동일하게 check_items에 두었다. 배열 배치는 category를 따르고 check_method를 따르지 않는다는 CC03·CC04의 기준을 유지했다.",
+      "source": null
+    },
+    {
+      "id": "VN_014",
+      "type": "design_decision",
+      "note": "observation_group은 서로 다른 확인 항목이 동일한 관찰 사실을 의미적으로 완전히 공유하는 경우에만 부여하는 데이터셋 팀 정의 필드(defined_by = dataset_team)이며 원문에 존재하는 개념이 아니다. 판정 기준은 양방향이다. 항목 A를 확인하는 상담 진술이 항목 B도 확인하고, 항목 B를 확인하는 상담 진술도 항목 A를 확인하는지를 의미적으로 비교해, 양방향이 모두 성립하면 동일 관찰로 보아 같은 그룹을 부여하고, 한 방향만 성립하면 서로 다른 조건이므로 그룹을 부여하지 않는다. 그룹 키는 한국어 관찰명을 사용한다(예: \"구토\"). 관계가 없는 항목에는 필드를 두지 않고 생략한다.",
+      "source": null
+    },
+    {
+      "id": "VN_015",
+      "type": "design_decision",
+      "note": "observation_group은 model_input_fields에 포함하지 않는다. LLM에는 id·category·check_method·item·description 다섯 필드만 입력하며, 항목별 원시 판정 결과는 그대로 보존한다. 그룹은 판정 이후 후처리에서만 사용해 화면 중복 표시를 제거하고 완결성 통계를 보정한다. 예를 들어 원시 판정에서 두 항목이 각각 확인으로 나오더라도 화면과 통계에서는 해당 관찰 1건으로 계산한다. 임상적 맥락이나 위험도 라벨을 그룹 키로 사용하지 않는다.",
+      "source": null
+    },
+    {
+      "id": "VN_016",
+      "type": "design_decision",
+      "note": "CC05에서 observation_group을 부여한 항목은 없다. 후보를 검토한 결과는 다음과 같다. (1) MSK_R003(관절이 부어 있음)과 MSK_R004(관절의 열감)는 같은 원문 문장에서 나왔고 함께 나타나는 경우가 많지만, '무릎이 부었어요'는 부종만 확인시키고 열감은 확인시키지 못하므로 양방향이 성립하지 않는다. (2) MSK_R001(대증적 치료로 호전이 없음)과 MSK_R002(반복적으로 같은 증상이 생김)는 같은 불릿에서 나왔지만 전자는 치료 후 경과, 후자는 증상의 재발 양상으로 서로 다른 관찰이다. (3) 근육통·요통은 확인 항목 자체가 없으므로 그룹 후보가 성립하지 않는다. 통증이라는 상위 개념만으로 항목을 묶지 않았다.",
+      "source": null
+    },
+    {
+      "id": "VN_017",
+      "type": "excluded",
+      "note": "관절통 지침의 치료·검사·의뢰 내용은 확인 항목으로 만들지 않았다. 제외 대상은 '소염진통제 + 근이완제 + 급성기가 아닐 때의 뜨거운 찜질 등'의 대증적 치료 구성, '의사에게 의뢰하여 원인에 대한 정밀 검사 및 치료를 받도록 한다', '바로 의사에게 진료를 받도록 한다'이다. 흐름 귀결은 각 항목의 metadata.source_flow_outcome에만 출처 추적용으로 남겼고 모델 입력에는 사용하지 않는다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 29,
+        "printed_page": 25,
+        "section": "02 외과, 정형외과 > 5 관절통",
+        "source_text": "대증적인 치료(소염진통제 + 근이완제 + 급성기가 아닐 때의 뜨거운 찜질 등)로 호전이 없거나 반복적으로 같은 증상이 생기면 의사에게 의뢰하여 원인에 대한 정밀 검사 및 치료를 받도록 한다."
+      }
+    },
+    {
+      "id": "VN_018",
+      "type": "excluded",
+      "note": "'02 외과, 정형외과 > 4 외상성 골절 및 염좌'(PDF 28~29쪽 / 책자 24~25쪽)에는 압통·부종·정상적인 움직임 곤란 등 관절 관련 확인 항목이 있으나, 외상성 손상은 CC05의 canonical 범위인 관절통과 다른 범주이고 처치 가능 범위에서도 외과·정형외과 영역으로 별도 규정되어 있으므로 포함하지 않았다. 외상성 근골격계 손상은 별도 chief complaint로 구축을 검토할 것.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 28,
+        "printed_page": 24,
+        "section": "02 외과, 정형외과 > 4 외상성 골절 및 염좌",
+        "source_text": "압통, 부종이 있다."
+      }
+    },
+    {
+      "id": "VN_019",
+      "type": "excluded",
+      "note": "일반적인 관절통 문진에서 흔히 쓰이는 항목(외상 여부, 통증 강도, 방사통, 저림, 근력저하, 보행장애, 관절 운동범위, 아침 강직, 직업, 자세, 운동량, 발생 시점, 지속기간 등)은 관절통 원문에 없으므로 생성하지 않았다. 관절통 지침이 세 불릿뿐이어서 CC01~CC04에 비해 확인 항목 수가 적은 것은 원문 구조의 차이다.",
+      "source": null
+    },
+    {
+      "id": "VN_020",
+      "type": "design_decision",
+      "note": "aliases에는 canonical chief complaint와 직접 대응하는 '관절통'만 등록한다. v0.1에 있던 '단순근육통'과 '요통'은 원문 근거가 있는 표현이지만 관절통의 다른 이름이 아니라 별개의 증상이므로 alias에서 삭제했다(처치 가능 범위 사실은 scope_reference에 유지). 원문 근거가 없는 구어 표현은 expression_mapping으로 분리해 source 없이 보관하며 needs_review=true로 두었다. '온몸이 쑤셔요'처럼 감기 몸살 등 다른 주호소로도 해석될 수 있는 표현은 분류가 애매해 추가하지 않았다.",
+      "source": null
+    },
+    {
+      "id": "VN_021",
+      "type": "scope_decision",
+      "note": "v0.1의 expression_mapping에 있던 '허리가 아파요'와 '근육이 아파요'는 삭제했다. 두 표현은 요통·근육통에 대응하는데 CC05의 범위가 관절통으로 좁혀지면서 대응하는 확인 항목이 아예 없어졌고, 그 상태로 두면 주호소가 인식되어도 제시할 문진 항목이 없기 때문이다. 요통·근육통 주호소를 다루게 되면 별도 chief complaint를 만들고 그때 해당 표현을 등록할 것.",
+      "source": null
+    },
+    {
+      "id": "VN_022",
+      "type": "document_fact",
+      "note": "부록 도입부에 이 지침의 사용 범위가 명시되어 있다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 16,
+        "printed_page": null,
+        "section": "부록 > 증상중심의 의사결정지침, 투약 및 처치방법 (표지 다음 안내문)",
+        "source_text": "증상중심의 의사결정지침과 투약 및 처치방법은 보건진료 전담공무원의 원활한 의료행위를 위해 참고용으로 사용한다."
+      }
+    },
+    {
+      "id": "VN_023",
+      "type": "document_fact",
+      "note": "PDF 쪽 번호와 책자 인쇄 쪽 번호는 4쪽 차이가 난다(책자 25쪽 = PDF 29쪽, 책자 2쪽 = PDF 6쪽). 모든 source의 pdf_page와 printed_page는 이 대응관계로 기록했다. 부록 안내문 쪽(PDF 16)처럼 인쇄 쪽번호가 표기되지 않은 면은 printed_page를 null로 두었다.",
+      "source": null
+    },
+    {
+      "id": "VN_024",
+      "type": "schema_change",
+      "note": "v0.1 → v0.2 변경사항. (1) chief_complaint.id를 CC05_musculoskeletal_pain에서 CC05_joint_pain으로, name과 canonical_term을 '근골격계 통증'에서 '관절통'으로 변경. (2) aliases에서 '단순근육통'과 '요통'을 삭제하고 '관절통'만 유지. (3) expression_mapping에서 '허리가 아파요', '근육이 아파요'를 삭제하고 남은 표현의 maps_to를 '관절통'으로 변경. (4) 관련 validation_notes(VN_001, VN_005, VN_006, VN_007, VN_019, VN_020, VN_021) 문구 정정. 파일명도 CC05_joint_pain.json으로 변경했다. check_items 네 항목(MSK_R001~MSK_R004)의 ID·item·description·check_method·source·source_text·metadata·source_role·needs_review, scope_reference, usage_policy(model_input_fields 5개 유지)는 v0.1과 동일하게 유지했다. 항목 ID의 MSK_ 접두사는 참조 안정성을 위해 변경하지 않았으며, canonical scope에 맞춘 접두사 변경이 필요하면 별도로 결정한다.",
+      "source": null
+    }
+  ]
+}
