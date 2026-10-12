@@ -1,0 +1,1043 @@
+{
+  "dataset_version": "0.3",
+  "chief_complaint": {
+    "id": "CC03_headache",
+    "name": "두통",
+    "canonical_term": "두통",
+    "aliases": [
+      {
+        "term": "두통",
+        "applies_canonical_flow": true,
+        "source": {
+          "document": "보건진료소 환자진료지침",
+          "edition": "2025.05",
+          "pdf_page": 53,
+          "printed_page": 49,
+          "section": "07 신경과 > 2 두통",
+          "source_text": "두통"
+        },
+        "note": "07 신경과 2번 항목의 표제이자 흐름도 시작 상자의 표현. canonical_term과 동일하다."
+      }
+    ]
+  },
+  "source_document": {
+    "title": "보건진료소 환자진료지침",
+    "edition": "2025.05"
+  },
+  "usage_policy": {
+    "purpose": "문진 완결성 점검(항목별 확인됨/미확인) 기준 데이터",
+    "defined_by": "dataset_team",
+    "model_input_fields": [
+      "id",
+      "category",
+      "check_method",
+      "item",
+      "description"
+    ],
+    "excluded_from_model_input": [
+      "metadata",
+      "source",
+      "source_role",
+      "needs_review"
+    ],
+    "note": "metadata.source_flow_outcome은 출처 추적용으로만 보관하며 모델 입력에서는 사용하지 않는다. 이 데이터셋은 항목의 확인 여부만 다루고 진단·응급 여부·의뢰 여부·투약을 판단하지 않는다."
+  },
+  "expression_mapping": {
+    "defined_by": "dataset_team",
+    "note": "주호소 인식을 위한 구어 표현 후보. 지침 원문 근거가 없는 표현이므로 aliases와 분리해 보관하며, source는 부여하지 않는다. 실제 상담 로그 확인 후 조정할 것.",
+    "expressions": [
+      {
+        "term": "머리가 아파요",
+        "maps_to": "두통",
+        "source": null,
+        "needs_review": true
+      },
+      {
+        "term": "머리가 지끈거려요",
+        "maps_to": "두통",
+        "source": null,
+        "needs_review": true
+      },
+      {
+        "term": "머리가 깨질 것 같아요",
+        "maps_to": "두통",
+        "source": null,
+        "needs_review": true
+      },
+      {
+        "term": "머리가 욱신거려요",
+        "maps_to": "두통",
+        "source": null,
+        "needs_review": true
+      }
+    ]
+  },
+  "history_items": [
+    {
+      "id": "HA_001",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "최근 치과 치료 및 감염질환 병력",
+      "description": "최근 치과 치료를 받았는지, 감염질환 병력이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "최근 치과 치료 및 감염질환 병력"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_002",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "후두부·목덜미를 띠를 두른 듯 압박하는 두통 양상",
+      "description": "후두부나 목덜미에 뻣뻣하고 띠를 두른 듯 압박하는 양상의 두통인지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 1",
+        "source_text": "후두부나 목덜미에 뻣뻣하고 띠를 두른 듯 압박하는 두통"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_003",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "정신적·심리적 불안과 긴장 시 악화",
+      "description": "정신적·심리적 불안과 긴장 시 두통이 심해지는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 1",
+        "source_text": "정신적/심리적 불안과 긴장 시 심해지고, 목을 움직이거나 더운 찜질, 휴식에는 호전되는 양상"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_004",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "목 움직임 시 호전",
+      "description": "목을 움직일 때 두통이 호전되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 1",
+        "source_text": "정신적/심리적 불안과 긴장 시 심해지고, 목을 움직이거나 더운 찜질, 휴식에는 호전되는 양상"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_005",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "더운 찜질 시 호전",
+      "description": "더운 찜질을 할 때 두통이 호전되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 1",
+        "source_text": "정신적/심리적 불안과 긴장 시 심해지고, 목을 움직이거나 더운 찜질, 휴식에는 호전되는 양상"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_006",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "휴식 시 호전",
+      "description": "휴식할 때 두통이 호전되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 1",
+        "source_text": "정신적/심리적 불안과 긴장 시 심해지고, 목을 움직이거나 더운 찜질, 휴식에는 호전되는 양상"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_007",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "편측의 반복성 박동성 두통 양상",
+      "description": "반복성의 박동성 두통이 주로 편측으로 발생하는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "반복성의 박동성 두통이 주로 편측으로 발생"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_008",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "오심 동반",
+      "description": "오심이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "보통 오심, 구토, 식욕부진"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_009",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "구토 동반",
+      "description": "구토가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "보통 오심, 구토, 식욕부진"
+      },
+      "metadata": {
+        "source_flow_outcome": null,
+        "observation_group": "구토"
+      }
+    },
+    {
+      "id": "HA_010",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "식욕부진 동반",
+      "description": "식욕부진이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "보통 오심, 구토, 식욕부진"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_011",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "빛공포증 동반",
+      "description": "빛에 대한 공포증이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "빛이나 소리공포증, 일상생활의 장애 등이 동반된다."
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_012",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "소리공포증 동반",
+      "description": "소리에 대한 공포증이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "빛이나 소리공포증, 일상생활의 장애 등이 동반된다."
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "HA_013",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "일상생활의 장애 동반",
+      "description": "일상생활의 장애가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "빛이나 소리공포증, 일상생활의 장애 등이 동반된다."
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    }
+  ],
+  "check_items": [
+    {
+      "id": "HA_R001",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "발열",
+      "description": "발열이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R002",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "구토",
+      "description": "구토가 동반되는지 확인한다. 원문은 구토를 뇌막자극징후의 예로 제시한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119",
+        "observation_group": "구토"
+      }
+    },
+    {
+      "id": "HA_R003",
+      "category": "red_flag",
+      "check_method": "physical_exam",
+      "item": "경부강직",
+      "description": "경부강직이 있는지 확인한다. 원문은 경부강직을 뇌막자극징후의 예로 제시한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R004",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "코막힘",
+      "description": "코막힘이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R005",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "콧물",
+      "description": "콧물이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R006",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "눈물",
+      "description": "눈물이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R007",
+      "category": "red_flag",
+      "check_method": "physical_exam",
+      "item": "눈충혈",
+      "description": "눈충혈이 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R008",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "시력저하",
+      "description": "시력저하가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R009",
+      "category": "red_flag",
+      "check_method": "other",
+      "item": "인지기능 장애",
+      "description": "인지기능 장애가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R010",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "성격변화",
+      "description": "성격변화가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R011",
+      "category": "red_flag",
+      "check_method": "physical_exam",
+      "item": "얼굴 또는 두피 쪽 발진",
+      "description": "얼굴이나 두피 쪽에 발진이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R012",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "치료에 반응하지 않는 두통",
+      "description": "치료에 반응하지 않는 두통인지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "치료에 반응하지 않는 두통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R013",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "두통 빈도가 잦아짐",
+      "description": "두통의 빈도가 잦아졌는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "두통의 빈도가 잦아지거나 심해지고 새로운 양상으로 변한 경우"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R014",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "두통이 심해짐",
+      "description": "두통이 심해졌는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "두통의 빈도가 잦아지거나 심해지고 새로운 양상으로 변한 경우"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R015",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "새로운 양상으로 변함",
+      "description": "두통이 새로운 양상으로 변했는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "두통의 빈도가 잦아지거나 심해지고 새로운 양상으로 변한 경우"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R016",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "기침 시 악화",
+      "description": "기침으로 두통이 악화되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "기침, 재채기, 운동, 성관계, 자세변화 등으로 악화되는 두통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R017",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "재채기 시 악화",
+      "description": "재채기로 두통이 악화되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "기침, 재채기, 운동, 성관계, 자세변화 등으로 악화되는 두통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R018",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "운동 시 악화",
+      "description": "운동으로 두통이 악화되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "기침, 재채기, 운동, 성관계, 자세변화 등으로 악화되는 두통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R019",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "성관계 시 악화",
+      "description": "성관계로 두통이 악화되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "기침, 재채기, 운동, 성관계, 자세변화 등으로 악화되는 두통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "HA_R020",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "자세변화 시 악화",
+      "description": "자세변화로 두통이 악화되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "기침, 재채기, 운동, 성관계, 자세변화 등으로 악화되는 두통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰 또는 Call 119"
+      }
+    }
+  ],
+  "validation_notes": [
+    {
+      "id": "VN_001",
+      "type": "document_fact",
+      "note": "CC03의 1차 근거는 PDF 53쪽 / 책자 49쪽의 '2 두통' 흐름도 하나로 한정했다. 흐름도는 '이차 두통 가능성을 시사하는 특징' 판단 상자에서 '아니오'일 때 '원발 두통'으로 내려가고, 원발 두통은 다시 두 갈래의 양상 설명 상자로 나뉜다. 다른 진료과나 소아과 자료는 섞지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통",
+        "source_text": "이차 두통 가능성을 시사하는 특징 / 원발 두통"
+      }
+    },
+    {
+      "id": "VN_002",
+      "type": "document_fact",
+      "note": "원문 페이지의 장(章) 표제는 '07 신경과 Neurology'이므로 section 표기는 '07 신경과 > 2 두통'을 사용했다. '신경과 영역'은 본문 4-1-7의 표기이며 부록 흐름도의 표제와는 다르다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과",
+        "source_text": "07 신경과 Neurology"
+      }
+    },
+    {
+      "id": "VN_003",
+      "type": "document_fact",
+      "note": "부록 도입부에 이 지침의 사용 범위가 명시되어 있다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 16,
+        "printed_page": null,
+        "section": "부록 > 증상중심의 의사결정지침, 투약 및 처치방법 (표지 다음 안내문)",
+        "source_text": "증상중심의 의사결정지침과 투약 및 처치방법은 보건진료 전담공무원의 원활한 의료행위를 위해 참고용으로 사용한다."
+      }
+    },
+    {
+      "id": "VN_004",
+      "type": "design_decision",
+      "note": "'이차 두통 가능성을 시사하는 특징' 첫 불릿은 여러 증상을 한 줄에 나열하고 있어 HA_R001~HA_R011 열한 개 항목으로 분리했다(발열 / 구토 / 경부강직 / 코막힘 / 콧물 / 눈물 / 눈충혈 / 시력저하 / 인지기능 장애 / 성격변화 / 얼굴 또는 두피 쪽 발진). 열한 항목 모두 source_text에 원문 불릿 전체를 남겼다. '뇌막자극징후'는 구토와 경부강직을 묶는 상위 표현이므로 별도 항목으로 만들지 않고 해당 두 항목의 description에 원문 맥락으로 남겼다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "발열, 뇌막자극징후(구토, 경부강직), 코막힘, 콧물, 눈물, 눈충혈, 시력저하, 인지기능 장애, 성격변화, 얼굴 이나 두피 쪽 발진 등의 증상 동반"
+      }
+    },
+    {
+      "id": "VN_005",
+      "type": "design_decision",
+      "note": "'기침, 재채기, 운동, 성관계, 자세변화 등으로 악화되는 두통'은 유발 상황별로 독립 확인이 가능하므로 HA_R016~HA_R020 다섯 항목으로 분리했다. 원문 표현을 최소한으로 구조화했으며('운동 시 악화' 등), 원문에 없는 정도·빈도 질문은 만들지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "기침, 재채기, 운동, 성관계, 자세변화 등으로 악화되는 두통"
+      }
+    },
+    {
+      "id": "VN_006",
+      "type": "design_decision",
+      "note": "'보통 오심, 구토, 식욕부진'은 HA_008~HA_010으로, '빛이나 소리공포증, 일상생활의 장애 등이 동반된다.'는 HA_011~HA_013으로 분리했다. 각 항목의 source_text에는 원문 불릿 전체를 남겼다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "보통 오심, 구토, 식욕부진 / 빛이나 소리공포증, 일상생활의 장애 등이 동반된다."
+      }
+    },
+    {
+      "id": "VN_007",
+      "type": "review_needed",
+      "note": "'두통의 빈도가 잦아지거나 심해지고 새로운 양상으로 변한 경우'는 '거나'와 '고'가 섞여 있어 세 조건의 논리 관계(택일인지 동시 충족인지)가 원문만으로 확정되지 않는다. 임의로 해석하지 않고 HA_R013~HA_R015 세 항목으로 분리해 각각 확인 여부만 판정하도록 했으며 세 항목 모두 needs_review=true로 표시했다. 조건 조합 판정은 하지 않는다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "두통의 빈도가 잦아지거나 심해지고 새로운 양상으로 변한 경우"
+      }
+    },
+    {
+      "id": "VN_008",
+      "type": "design_decision",
+      "note": "'최근 치과 치료 및 감염질환 병력'은 원문이 하나의 병력 항목으로 제시하므로 HA_001 한 항목으로 유지했다. 원발 두통 분기 1의 악화·완화 서술은 v0.1에서 한 항목이었으나 v0.2에서 네 항목으로 분리했다(VN_023 참조).",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통",
+        "source_text": "정신적/심리적 불안과 긴장 시 심해지고, 목을 움직이거나 더운 찜질, 휴식에는 호전되는 양상 / 최근 치과 치료 및 감염질환 병력"
+      }
+    },
+    {
+      "id": "VN_009",
+      "type": "design_decision",
+      "note": "check_method 분리는 지침 본문이 문진(2-1-1)과 신체검진기술(2-1-2), 신체검진내용(2-1-3, 활력징후 측정 및 신체계측 포함)을 별도로 규정하고 있는 데 근거한다. 다만 개별 항목을 어느 방법에 배정할지는 데이터셋 팀의 설계 결정이며 두통 원문이 항목별 확인 방법을 지정한 것은 아니다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 5,
+        "printed_page": 1,
+        "section": "2. 보건진료 전담공무원이 행하는 진찰 및 검사기준 > 2-1. 건강상태 평가에 필요한 기술수준",
+        "source_text": "2-1-1. 문진 / 2-1-2. 신체검진기술 / 2-1-3. 신체검진내용 - 활력징후 측정 및 신체계측"
+      }
+    },
+    {
+      "id": "VN_010",
+      "type": "review_needed",
+      "note": "check_items의 check_method는 원문이 직접 지정한 값이 아니라 데이터셋 팀의 설계 결정이며, 의료인 자문 전 잠정값이다. HA_R001(발열)은 체온 측정으로 확인할 수 있어 vital_sign으로 두었으나 원문이 확인 방법을 지정하지 않았다. HA_R007(눈충혈)은 시진으로 확인할 수 있어 physical_exam으로 두었으나 환자 진술로도 확인될 가능성이 있다. HA_R008(시력저하)은 환자 진술로 확인할 수 있어 patient_report로 두었으나 실제 평가에서는 별도의 시력 확인 절차가 필요할 가능성이 있다. HA_R009(인지기능 장애)는 확인 방법이 원문에 명시되지 않아 other로 두었다. HA_R010(성격변화)은 환자 본인보다 보호자 등 제3자의 진술로도 확인될 수 있어 patient_report로 두었다. 다섯 항목 모두 현재 분류를 유지하며 허용값 외의 새로운 check_method를 만들지 않는다.",
+      "source": null
+    },
+    {
+      "id": "VN_011",
+      "type": "review_needed",
+      "note": "원문에 정량 기준이나 판정 기준이 없는 항목. HA_R012('치료에 반응하지 않는 두통' - 무엇을 얼마 동안 치료한 상태인지 기준 없음), HA_R013('잦아짐'의 빈도 기준 없음), HA_R014('심해짐'의 정도 기준 없음), HA_R015('새로운 양상'의 판정 기준 없음), HA_R009('인지기능 장애'의 판정 기준 없음). 임의 기준을 부여하지 않았으므로 어노테이션 가이드 작성 단계에서 기준 합의가 필요하다.",
+      "source": null
+    },
+    {
+      "id": "VN_012",
+      "type": "review_needed",
+      "note": "원문 표현이 '등'으로 끝나 열거가 완결적이지 않은 불릿이 세 곳 있다('… 등의 증상 동반', '기침, 재채기, 운동, 성관계, 자세변화 등으로', '… 일상생활의 장애 등이 동반된다'). 명시된 항목만 데이터화했고 '등'에 해당할 수 있는 추가 증상은 임의로 생성하지 않았다. 누락 여부는 의료인 자문에서 확인할 것.",
+      "source": null
+    },
+    {
+      "id": "VN_013",
+      "type": "review_needed",
+      "note": "'빛이나 소리공포증'을 HA_011(빛공포증)과 HA_012(소리공포증)로 나누면서 원문에 없는 '빛공포증'이라는 단어를 항목명으로 사용했다. 이는 데이터셋 팀의 구조화이므로 HA_011을 needs_review=true로 유지한다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 2",
+        "source_text": "빛이나 소리공포증, 일상생활의 장애 등이 동반된다."
+      }
+    },
+    {
+      "id": "VN_014",
+      "type": "design_decision",
+      "note": "원문에 등장하는 '긴장성 두통', '편두통'은 각 양상 서술 묶음에 붙은 분류 명칭이다. 진단 판정값을 생성하지 않기 위해 '긴장성 두통 여부', '편두통 여부' 같은 항목은 만들지 않았고, 대신 원문의 양상 서술만 HA_002~HA_013으로 구조화했다. 분류 명칭 자체는 문서 사실로만 남긴다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통",
+        "source_text": ": 긴장성 두통 / : 편두통"
+      }
+    },
+    {
+      "id": "VN_015",
+      "type": "design_decision",
+      "note": "이차 두통 판단 상자에서 나온 항목이라도 병력 문진 성격인 '최근 치과 치료 및 감염질환 병력'은 history_items(HA_001)에 배치하고, 흐름도 귀결은 metadata에만 남겼다. 나머지 이차 두통 특징은 위험신호 성격이므로 check_items(category = red_flag)로 두었다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 이차 두통 가능성을 시사하는 특징",
+        "source_text": "최근 치과 치료 및 감염질환 병력"
+      }
+    },
+    {
+      "id": "VN_016",
+      "type": "design_decision",
+      "note": "metadata.source_flow_outcome에는 이차 두통 판단 상자의 귀결('의사에게 의뢰 또는 Call 119')만 출처 추적용으로 기록했고 모델 입력에서는 사용하지 않는다. 원발 두통 두 갈래의 귀결은 치료 상자이므로 치료 정보를 남기지 않기 위해 HA_002~HA_013의 source_flow_outcome은 null로 두었다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통",
+        "source_text": "의사에게 의뢰 또는 Call 119"
+      }
+    },
+    {
+      "id": "VN_017",
+      "type": "excluded",
+      "note": "두통 흐름도의 치료·처방 내용은 모델 입력에서 전면 제외했다. 제외 대상은 긴장성 두통 갈래의 '스트레스, 피로를 피하고 휴식', 'Ibuprofen 200mg or Acetaminophen 500mg bid×3일', '증상 호전 없으면 의사에게 의뢰'와 편두통 갈래의 '약물적 치료 : 긴장성 두통과 동일', '3일간 약물치료에 호전없거나 심한 경우 → 의사에게 의뢰', '비약물적 치료 : 유발인자 회피 및 생활습관 변화(스트레스, 과로, 초콜릿, 음주, 약물 등)'이다. 이 데이터셋은 문진 완결성만 다루며 약물·용량·투약기간·의뢰 판단을 항목으로 만들지 않는다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 치료 상자",
+        "source_text": "Ibuprofen 200mg or Acetaminophen 500mg / 비약물적 치료 : 유발인자 회피 및 생활습관 변화"
+      }
+    },
+    {
+      "id": "VN_018",
+      "type": "excluded",
+      "note": "'비약물적 치료'의 유발인자 목록(스트레스, 과로, 초콜릿, 음주, 약물 등)은 문진 항목처럼 보이지만 원문에서 치료 방법으로 제시되어 있으므로 확인 항목으로 만들지 않았다. 유발인자 문진을 별도 항목으로 둘지 여부는 의료인 자문에서 결정할 것.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 편두통 갈래 비약물적 치료",
+        "source_text": "비약물적 치료 : 유발인자 회피 및 생활습관 변화 (스트레스, 과로, 초콜릿, 음주, 약물 등)"
+      }
+    },
+    {
+      "id": "VN_019",
+      "type": "excluded",
+      "note": "'07 신경과 > 1 치매' 흐름도와 인지선별검사(CIST), KDSQ-C, 단축형 노인 우울 척도 등 인접 자료는 별도 주호소이므로 CC03에 포함하지 않았다. HA_R009(인지기능 장애)는 두통 원문에 직접 등장하는 표현만 사용했고 치매 선별검사 항목을 끌어오지 않았다. 소아과를 포함한 다른 진료과 자료도 섞지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 52,
+        "printed_page": 48,
+        "section": "07 신경과 > 1 치매",
+        "source_text": "치매 선별검사"
+      }
+    },
+    {
+      "id": "VN_020",
+      "type": "excluded",
+      "note": "일반적인 두통 문진에서 흔히 쓰이는 항목(수면시간, 카페인 섭취, 월경 주기, 탈수 여부, 가족력, 약물 과용 여부, 발생 시점, 지속기간 등)은 PDF 53쪽 두통 원문에 없으므로 생성하지 않았다. 특히 CC01·CC02에 있는 '발생 시점'과 '지속기간'에 해당하는 표현이 두통 흐름도에는 없다는 점에 유의할 것.",
+      "source": null
+    },
+    {
+      "id": "VN_021",
+      "type": "design_decision",
+      "note": "aliases에는 원문에서 직접 확인되는 '두통'만 등록했다. 원문 근거가 없는 구어 표현(머리가 아파요, 머리가 지끈거려요, 머리가 깨질 것 같아요, 머리가 욱신거려요)은 expression_mapping으로 분리해 source 없이 보관하며 needs_review=true로 두었다. priority 필드는 원문에 우선순위 표현이 없으므로 만들지 않았고 source_role로 원문에서의 위치만 기록한다.",
+      "source": null
+    },
+    {
+      "id": "VN_022",
+      "type": "document_fact",
+      "note": "PDF 쪽 번호와 책자 인쇄 쪽 번호는 4쪽 차이가 난다(책자 49쪽 = PDF 53쪽). 모든 source의 pdf_page와 printed_page는 이 대응관계로 기록했다. 부록 안내문 쪽(PDF 16)처럼 인쇄 쪽번호가 표기되지 않은 면은 printed_page를 null로 두었다.",
+      "source": null
+    },
+    {
+      "id": "VN_023",
+      "type": "design_decision",
+      "note": "v0.1의 HA_003('불안·긴장 시 악화, 목 움직임·더운 찜질·휴식 시 호전되는 양상')은 한 문장 안에 악화요인 하나와 완화요인 셋이 들어 있어 상담에서 각각 독립적으로 확인·판정할 수 있다. 따라서 v0.2에서 HA_003(정신적·심리적 불안과 긴장 시 악화), HA_004(목 움직임 시 호전), HA_005(더운 찜질 시 호전), HA_006(휴식 시 호전) 네 항목으로 분리했다. 네 항목 모두 source_text에 원문 문장 전체를 그대로 남겼고, 원문에 없는 정도·빈도 질문은 만들지 않았다. 분리로 ID가 밀리면서 v0.1의 HA_004~HA_010을 HA_007~HA_013으로 순차 재정렬했으며(내용·source·needs_review는 그대로 유지), HA_001과 HA_002의 ID는 변경하지 않았다. check_items HA_R001~HA_R020의 ID도 변경하지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통 > 원발 두통 분기 1",
+        "source_text": "정신적/심리적 불안과 긴장 시 심해지고, 목을 움직이거나 더운 찜질, 휴식에는 호전되는 양상"
+      }
+    },
+    {
+      "id": "VN_024",
+      "type": "review_needed",
+      "note": "의료인 자문이 필요한 항목 정리. (1) check_method 설계 결정: HA_R001, HA_R007, HA_R008, HA_R009, HA_R010(VN_010). (2) 원문 논리 결합관계 미확정: HA_R013~HA_R015(VN_007). (3) 원문에 정량·판정 기준 없음: HA_R012, HA_R013, HA_R014, HA_R015, HA_R009(VN_011). (4) 원문에 없는 항목명 사용: HA_011 빛공포증(VN_013). (5) 열거가 '등'으로 열려 있어 누락 가능성이 있는 세 불릿(VN_012). (6) 치료 상자의 유발인자 문진 전환 여부(VN_018). (7) HA_003~HA_006 분리의 임상적 타당성(VN_023).",
+      "source": null
+    },
+    {
+      "id": "VN_025",
+      "type": "schema_change",
+      "note": "v0.1 → v0.2 변경사항. (1) HA_003을 네 개 항목(HA_003~HA_006)으로 분리. (2) v0.1의 HA_004~HA_010을 HA_007~HA_013으로 재정렬. (3) 관련 validation_notes(VN_006, VN_008, VN_010, VN_013, VN_014, VN_016) 문구를 새 ID에 맞게 정정하고 VN_023·VN_024를 추가. chief_complaint, expression_mapping, usage_policy, check_items(HA_R001~HA_R020) 전체, 모든 source·source_text·pdf_page(53)·printed_page(49)·metadata·source_role은 v0.1과 동일하게 유지했다.",
+      "source": null
+    },
+    {
+      "id": "VN_026",
+      "type": "design_decision",
+      "note": "observation_group은 서로 다른 확인 항목이 동일한 관찰 사실을 의미적으로 완전히 공유하는 경우에만 부여하는 데이터셋 팀 정의 필드(defined_by = dataset_team)이며 원문에 존재하는 개념이 아니다. 판정 기준은 양방향이다. 항목 A를 확인하는 상담 진술이 항목 B도 확인하고, 항목 B를 확인하는 상담 진술도 항목 A를 확인하는지를 의미적으로 비교해, 양방향이 모두 성립하면 동일 관찰로 보아 같은 그룹을 부여하고, 한 방향만 성립하면 서로 다른 조건이므로 그룹을 부여하지 않는다. 그룹 키는 한국어 관찰명을 사용한다(예: \"구토\"). 관계가 없는 항목에는 필드를 두지 않고 생략한다.",
+      "source": null
+    },
+    {
+      "id": "VN_027",
+      "type": "design_decision",
+      "note": "observation_group은 model_input_fields에 포함하지 않는다. LLM에는 id·category·check_method·item·description 다섯 필드만 입력하며, 항목별 원시 판정 결과는 그대로 보존한다. 그룹은 판정 이후 후처리에서만 사용해 화면 중복 표시를 제거하고 완결성 통계를 보정한다. 예를 들어 원시 판정에서 두 항목이 각각 확인으로 나오더라도 화면과 통계에서는 해당 관찰 1건으로 계산한다. 임상적 맥락이나 위험도 라벨을 그룹 키로 사용하지 않는다.",
+      "source": null
+    },
+    {
+      "id": "VN_028",
+      "type": "design_decision",
+      "note": "HA_009(구토 동반)와 HA_R002(구토)에 observation_group = \"구토\"를 부여했다. 두 항목은 원문 흐름도에서 각각 원발 두통 분기 2와 이차 두통 가능성을 시사하는 특징 상자에 속해 출처 맥락이 다르지만, 확인 내용은 둘 다 구토 여부로 동일하다. '토했어요'라는 진술이 양쪽을 모두 확인시키고 그 역도 성립하므로 양방향 판정 기준을 충족한다. 두 항목의 원시 판정과 각각의 source·source_text는 그대로 유지하며, 후처리에서만 구토 1건으로 합산한다. CC03의 다른 항목에는 동일 관찰 관계가 없어 필드를 부여하지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 53,
+        "printed_page": 49,
+        "section": "07 신경과 > 2 두통",
+        "source_text": "보통 오심, 구토, 식욕부진 / 뇌막자극징후(구토, 경부강직)"
+      }
+    },
+    {
+      "id": "VN_029",
+      "type": "schema_change",
+      "note": "v0.2 → v0.3 변경사항. (1) HA_009와 HA_R002의 metadata에 observation_group = \"구토\"를 추가. (2) observation_group의 공통 정의와 양방향 판정 규칙, 후처리 사용 원칙, 부여 근거를 VN_026~VN_028로 기록. 그 외 chief_complaint, expression_mapping, usage_policy(model_input_fields 5개 유지), history_items 13개, check_items 20개의 item·description·check_method·source·source_text·source_role·needs_review와 metadata.source_flow_outcome은 v0.2와 동일하다.",
+      "source": null
+    }
+  ]
+}

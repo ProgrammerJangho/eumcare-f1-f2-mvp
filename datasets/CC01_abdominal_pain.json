@@ -1,0 +1,726 @@
+{
+  "dataset_version": "0.4",
+  "chief_complaint": {
+    "id": "CC01_abdominal_pain",
+    "name": "복통",
+    "canonical_term": "복통",
+    "aliases": []
+  },
+  "source_document": {
+    "title": "보건진료소 환자진료지침",
+    "edition": "2025.05"
+  },
+  "usage_policy": {
+    "purpose": "문진 완결성 점검(항목별 확인됨/미확인) 기준 데이터",
+    "defined_by": "dataset_team",
+    "model_input_fields": [
+      "id",
+      "category",
+      "check_method",
+      "item",
+      "description"
+    ],
+    "excluded_from_model_input": [
+      "metadata",
+      "source",
+      "source_role",
+      "needs_review"
+    ],
+    "note": "metadata에 담긴 원문 흐름도의 귀결(응급진료/의사에게 의뢰)은 출처 추적용으로만 보관하며, 모델 입력에는 넣지 않는다. 이 데이터셋은 항목 확인 여부만 다루고 응급 여부·의뢰 여부·진단을 판정하지 않는다."
+  },
+  "history_items": [
+    {
+      "id": "ABD_001",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "수술력",
+      "description": "과거 수술을 받은 적이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "수술력"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_002",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "내시경검사 병력",
+      "description": "내시경검사를 받은 병력이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "내시경검사 병력"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_003",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "발생 시점",
+      "description": "증상이 언제부터 발생했는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "언제부터 발생"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_004",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "지속적/간헐적 여부",
+      "description": "통증이 지속적인지 간헐적인지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "지속적 또는 간헐적"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_005",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "악화요인/완화요인",
+      "description": "증상을 악화시키는 요인과 완화시키는 요인을 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "악화요인/완화요인"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_006",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "구토 동반 여부",
+      "description": "구토가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "구토, 설사 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_007",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "설사 동반 여부",
+      "description": "설사가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "구토, 설사 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_008",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "통증 부위",
+      "description": "통증이 어느 부위에 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "어느 부위"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_009",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "통증의 양상",
+      "description": "통증의 양상을 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "통증의 양상, 위치 변화"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    },
+    {
+      "id": "ABD_010",
+      "category": "history",
+      "check_method": "patient_report",
+      "item": "통증의 위치 변화",
+      "description": "통증 위치에 변화가 있었는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "통증의 양상, 위치 변화"
+      },
+      "metadata": {
+        "source_flow_outcome": null
+      }
+    }
+  ],
+  "check_items": [
+    {
+      "id": "ABD_R001",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "고열",
+      "description": "고열이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 1차 판단 상자",
+        "source_text": "고열"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급진료"
+      }
+    },
+    {
+      "id": "ABD_R002",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "빈맥이나 서맥",
+      "description": "빈맥 또는 서맥이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 1차 판단 상자",
+        "source_text": "빈맥이나 서맥"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급진료"
+      }
+    },
+    {
+      "id": "ABD_R003",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "호흡 이상",
+      "description": "호흡 이상이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 1차 판단 상자",
+        "source_text": "호흡 이상"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급진료"
+      }
+    },
+    {
+      "id": "ABD_R004",
+      "category": "red_flag",
+      "check_method": "vital_sign",
+      "item": "저혈압",
+      "description": "저혈압이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 1차 판단 상자",
+        "source_text": "저혈압"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급진료"
+      }
+    },
+    {
+      "id": "ABD_R005",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "토혈이나 혈변, 흑색변",
+      "description": "토혈, 혈변, 흑색변이 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 1차 판단 상자",
+        "source_text": "토혈이나 혈변, 흑색변"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급진료"
+      }
+    },
+    {
+      "id": "ABD_R006",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "갑자기 시작된 빠르게 진행하는 심한 통증",
+      "description": "갑자기 시작되어 빠르게 진행하는 심한 통증인지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 1차 판단 상자",
+        "source_text": "갑자기 시작된 빠르게 진행하는 심한 통증"
+      },
+      "metadata": {
+        "source_flow_outcome": "응급진료"
+      }
+    },
+    {
+      "id": "ABD_R007",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "복통 후 구토가 이어짐",
+      "description": "복통이 발생한 뒤 구토가 이어지는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "복통 후 구토가 이어짐"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    },
+    {
+      "id": "ABD_R008",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "구토나 설사 후에도 완화되지 않는 복통",
+      "description": "구토나 설사 후에도 복통이 완화되지 않는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "구토나 설사 후에도 완화되지 않는 복통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    },
+    {
+      "id": "ABD_R009",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "복통으로 인해 잠에서 깨어남",
+      "description": "복통 때문에 잠에서 깨는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "복통으로 인해 잠에서 깨어남"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    },
+    {
+      "id": "ABD_R010",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "60세 이상에서 발생하는 심한 복통",
+      "description": "60세 이상에서 발생한 심한 복통인지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": false,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "60세 이상에서 발생하는 심한 복통"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    },
+    {
+      "id": "ABD_R011",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "체중 감소 동반",
+      "description": "체중 감소가 동반되는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "체중 감소 동반"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    },
+    {
+      "id": "ABD_R012",
+      "category": "red_flag",
+      "check_method": "patient_report",
+      "item": "같은 문제로 반복상담 또는 양상변화",
+      "description": "같은 문제로 반복해서 상담한 적이 있는지, 또는 증상 양상에 변화가 있었는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "같은 문제로 반복상담 또는 양상변화"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    },
+    {
+      "id": "ABD_R013",
+      "category": "red_flag",
+      "check_method": "physical_exam",
+      "item": "복부 종괴, 기관 비대",
+      "description": "복부 종괴 또는 기관 비대가 있는지 확인한다.",
+      "source_role": "direct_flowchart_item",
+      "needs_review": true,
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "복부 종괴, 기관 비대"
+      },
+      "metadata": {
+        "source_flow_outcome": "의사에게 의뢰"
+      }
+    }
+  ],
+  "validation_notes": [
+    {
+      "id": "VN_001",
+      "type": "schema_change",
+      "note": "v0.1 → v0.2 변경사항. (1) red_flag_items 배열을 check_items로 이름 변경하고 모든 항목에 check_method(patient_report / vital_sign / physical_exam)를 추가. (2) 항목별 flow_outcome을 metadata.source_flow_outcome으로 이동. (3) priority 필드 제거, source_role로 대체. (4) alias에 applies_canonical_flow 필드 추가. 항목 ID는 v0.1과 동일하게 유지했다.",
+      "source": null
+    },
+    {
+      "id": "VN_002",
+      "type": "design_decision",
+      "note": "check_method 분리는 지침 본문이 문진과 신체검진을 별도로 규정하고 있는 데 근거한다. 2-1-1은 문진, 2-1-2는 신체검진기술(시진·청진·타진·촉진), 2-1-3은 신체검진내용(활력징후 측정 및 신체계측 포함)으로 구분되어 있다. 다만 개별 항목을 어느 방법에 배정할지는 데이터셋 팀의 설계 결정이며 원문이 항목별로 지정한 것은 아니다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 5,
+        "printed_page": 1,
+        "section": "2. 보건진료 전담공무원이 행하는 진찰 및 검사기준 > 2-1. 건강상태 평가에 필요한 기술수준",
+        "source_text": "2-1-1. 문진 / 2-1-2. 신체검진기술 / 2-1-3. 신체검진내용 - 활력징후 측정 및 신체계측"
+      }
+    },
+    {
+      "id": "VN_003",
+      "type": "design_decision",
+      "note": "metadata.source_flow_outcome은 원문 흐름도의 화살표가 가리키는 결과 상자 이름('응급진료' 또는 '의사에게 의뢰')을 그대로 전사한 값이다. 출처 추적용으로만 보관하며 모델 입력에서는 제외한다(usage_policy 참조). 이 데이터셋은 항목 확인 여부만 다루고 응급 여부·의뢰 여부·진단을 판정하지 않는다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통",
+        "source_text": "응급진료 / 의사에게 의뢰"
+      }
+    },
+    {
+      "id": "VN_004",
+      "type": "design_decision",
+      "note": "v0.1의 priority 필드는 원문이 지정한 값이 아니라 팀 기준이었으므로 제거했다. 대신 source_role = 'direct_flowchart_item'만 남겨 '복통 의사결정 흐름도 상자에 직접 제시된 항목'이라는 사실만 기록한다. 실제 우선순위는 의료인 자문 이후 별도 필드로 추가할 것.",
+      "source": null
+    },
+    {
+      "id": "VN_005",
+      "type": "review_needed",
+      "note": "check_method 배정에 추가 검토가 필요한 항목. ABD_R003(호흡 이상)은 호흡수 측정 외 시진·청진 소견도 포함될 수 있어 vital_sign / physical_exam 경계가 모호하다. ABD_R005(토혈이나 혈변, 흑색변)는 환자 진술 외에 직접 관찰로도 확인될 수 있다. ABD_R011(체중 감소 동반)은 신체계측으로도 확인 가능하다. ABD_R012(같은 문제로 반복상담)는 환자 진술 외에 보건진료소 상담 기록 조회 성격이 있어 별도 check_method(record_review) 신설을 검토할 것.",
+      "source": null
+    },
+    {
+      "id": "VN_006",
+      "type": "review_needed",
+      "note": "ABD_R013의 '기관 비대'는 원문 표기만으로는 지칭 대상이 명확하지 않아 임의 해석하지 않았다. check_method는 촉진으로 확인되는 소견이라는 점에서 physical_exam으로 두었으나, 용어 자체는 의료인 확인이 필요하다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 흐름도 2차 판단 상자",
+        "source_text": "복부 종괴, 기관 비대"
+      }
+    },
+    {
+      "id": "VN_007",
+      "type": "review_needed",
+      "note": "다음 항목들은 원문에 수치 기준이나 판정 기준이 없다. ABD_R001(고열 - 체온 기준 없음), ABD_R002(빈맥이나 서맥 - 맥박수 기준 없음), ABD_R004(저혈압 - 혈압 기준 없음), ABD_R006/ABD_R010('심한'의 기준 없음), ABD_R012('반복상담'의 횟수·기간 기준 없음). 임의 기준을 부여하지 않았으므로 어노테이션 가이드 작성 단계에서 기준 합의가 필요하다.",
+      "source": null
+    },
+    {
+      "id": "VN_008",
+      "type": "design_decision",
+      "note": "원문 '구토, 설사 동반'은 하나의 불릿이지만 상담 문장에서 '토하진 않았어요' / '설사는 없어요'를 각각 판정할 수 있도록 ABD_006, ABD_007로 분리했다. '통증의 양상, 위치 변화'도 같은 이유로 ABD_009, ABD_010으로 분리했다. 두 경우 모두 source_text에 원문 표현을 그대로 유지했고, 원문에 없는 세부 질문은 만들지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통 > 병력 청취, 신체 검사",
+        "source_text": "구토, 설사 동반 / 통증의 양상, 위치 변화"
+      }
+    },
+    {
+      "id": "VN_009",
+      "type": "design_decision",
+      "note": "'악화요인/완화요인'(ABD_005)과 '토혈이나 혈변, 흑색변'(ABD_R005)은 원문에서 하나의 항목으로 제시되어 있으므로 분리하지 않고 유지했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통",
+        "source_text": "악화요인/완화요인 / 토혈이나 혈변, 흑색변"
+      }
+    },
+    {
+      "id": "VN_010",
+      "type": "scope_decision",
+      "note": "CC01의 canonical chief complaint는 2025년 5월 보건진료소 환자진료지침의 실제 의사결정지침 항목인 '복통'으로 한정한다. '속쓰림'은 PDF 18쪽의 '복통의 대증 치료'에서 '복통, 속쓰림, 소화불량 등'으로 함께 언급되지만, 복통 의사결정 흐름도의 주호소로 직접 제시되지는 않으므로 현재 CC01의 alias로 등록하지 않는다. 자연어 표현 매핑 사전에서 '속쓰림', '속이 쓰려요' 등을 CC01로 연결할지는 의료인 검토 대상으로 별도 관리한다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 1 복통 > 복통의 대증 치료",
+        "source_text": "복통, 속쓰림, 소화불량 등"
+      }
+    },
+    {
+      "id": "VN_011",
+      "type": "excluded",
+      "note": "같은 문구에 '소화불량'도 함께 등장하나 CC01의 canonical chief complaint 범위('복통') 밖이므로 alias로 등록하지 않는다. VN_010과 동일한 이유이며, 현재 버전에서는 추가하지 않는다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 1 복통 > 복통의 대증 치료",
+        "source_text": "복통, 속쓰림, 소화불량 등"
+      }
+    },
+    {
+      "id": "VN_012",
+      "type": "excluded",
+      "note": "복통 흐름도 하단의 '대증 치료 2~3일', '호전 없음 → 의사에게 의뢰', '관찰', '최근 내시경검사 등 검사해 보지 않았으면 검사 추천'은 치료·사후 조치 흐름이므로 확인 항목에서 제외했다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통",
+        "source_text": "대증 치료 2~3일 / 관찰 / 최근 내시경검사 등 검사해 보지 않았으면 검사 추천"
+      }
+    },
+    {
+      "id": "VN_013",
+      "type": "excluded",
+      "note": "PDF 18쪽 / 책자 14쪽 '복통의 대증 치료'의 약물 처방 내용은 history_items 및 check_items에 포함하지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 18,
+        "printed_page": 14,
+        "section": "01 내과 > 1 복통 > 복통의 대증 치료",
+        "source_text": "복통의 대증 치료"
+      }
+    },
+    {
+      "id": "VN_014",
+      "type": "excluded",
+      "note": "'03 소아과 > 1 복통'에도 의사 의뢰가 필요한 증상·징후 목록이 별도로 존재하나, 본 데이터셋의 대상은 '01 내과 > 1 복통'이므로 포함하지 않았다. 소아 복통은 별도 chief complaint로 분리 구축을 검토할 것.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 30,
+        "printed_page": 26,
+        "section": "03 소아과 > 1 복통",
+        "source_text": "다음의 증상 또는 징후가 보이는 경우에는 의사에게 의뢰 필요"
+      }
+    },
+    {
+      "id": "VN_015",
+      "type": "excluded",
+      "note": "본문 '3. 환자이송의 범위'와 '4-1-1-1. 복통'에도 복통 관련 서술이 있으나, 복통 의사결정 흐름도에서 직접 확인하도록 제시된 항목이 아니므로 포함하지 않았다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 6,
+        "printed_page": 2,
+        "section": "3. 환자이송의 범위 / 4-1-1-1. 복통",
+        "source_text": "4-1-1-1. 복통 - 제산제/진정제로 호전될 수 있는 증상 : 급·만성위염 등"
+      }
+    },
+    {
+      "id": "VN_016",
+      "type": "document_fact",
+      "note": "부록 도입부에 이 지침의 사용 범위가 명시되어 있다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 16,
+        "printed_page": null,
+        "section": "부록 > 증상중심의 의사결정지침, 투약 및 처치방법 (표지 다음 안내문)",
+        "source_text": "증상중심의 의사결정지침과 투약 및 처치방법은 보건진료 전담공무원의 원활한 의료행위를 위해 참고용으로 사용한다."
+      }
+    },
+    {
+      "id": "VN_017",
+      "type": "document_fact",
+      "note": "복통 흐름도 최상단에 제시된 전제 문구. 확인 항목으로는 넣지 않고 문서 사실로만 기록한다.",
+      "source": {
+        "document": "보건진료소 환자진료지침",
+        "edition": "2025.05",
+        "pdf_page": 17,
+        "printed_page": 13,
+        "section": "01 내과 > 1 복통",
+        "source_text": "배가 아파요(복통) : 일과성/가벼운 질환과 응급수술 입원을 요하는 질환의 감별이 중요함"
+      }
+    },
+    {
+      "id": "VN_018",
+      "type": "document_fact",
+      "note": "PDF 쪽 번호와 책자 인쇄 쪽 번호는 4쪽 차이가 난다(책자 13쪽 = PDF 17쪽). 모든 source의 pdf_page와 printed_page는 이 대응관계로 기록했다. 부록 안내문 쪽(PDF 16)처럼 인쇄 쪽번호가 표기되지 않은 면은 printed_page를 null로 두었다.",
+      "source": null
+    },
+    {
+      "id": "VN_019",
+      "type": "schema_change",
+      "note": "v0.2 → v0.3 변경사항. (1) chief_complaint.name을 '복통·속쓰림'에서 '복통'으로 변경. (2) chief_complaint.aliases에서 '속쓰림' 항목을 삭제해 빈 배열로 둠(applies_canonical_flow 필드도 함께 제거됨). (3) 속쓰림 alias에 관한 VN_010을 scope_decision으로 교체하고 VN_011 문구를 정정. canonical_term('복통'), chief_complaint.id, history_items 10개와 check_items 13개의 ID·check_method·source·metadata·source_role·needs_review, usage_policy는 v0.2와 동일하게 유지했다.",
+      "source": null
+    },
+    {
+      "id": "VN_020",
+      "type": "design_decision",
+      "note": "observation_group은 서로 다른 확인 항목이 동일한 관찰 사실을 의미적으로 완전히 공유하는 경우에만 부여하는 데이터셋 팀 정의 필드(defined_by = dataset_team)이며 원문에 존재하는 개념이 아니다. 판정 기준은 양방향이다. 항목 A를 확인하는 상담 진술이 항목 B도 확인하고, 항목 B를 확인하는 상담 진술도 항목 A를 확인하는지를 의미적으로 비교해, 양방향이 모두 성립하면 동일 관찰로 보아 같은 그룹을 부여하고, 한 방향만 성립하면 서로 다른 조건이므로 그룹을 부여하지 않는다. 그룹 키는 한국어 관찰명을 사용한다(예: \"구토\"). 관계가 없는 항목에는 필드를 두지 않고 생략한다.",
+      "source": null
+    },
+    {
+      "id": "VN_021",
+      "type": "design_decision",
+      "note": "observation_group은 model_input_fields에 포함하지 않는다. LLM에는 id·category·check_method·item·description 다섯 필드만 입력하며, 항목별 원시 판정 결과는 그대로 보존한다. 그룹은 판정 이후 후처리에서만 사용해 화면 중복 표시를 제거하고 완결성 통계를 보정한다. 예를 들어 원시 판정에서 두 항목이 각각 확인으로 나오더라도 화면과 통계에서는 해당 관찰 1건으로 계산한다. 임상적 맥락이나 위험도 라벨을 그룹 키로 사용하지 않는다.",
+      "source": null
+    },
+    {
+      "id": "VN_022",
+      "type": "design_decision",
+      "note": "CC01에서 동일 관찰 후보를 검토했으나 그룹을 부여한 항목은 없다. ABD_006(구토 동반 여부)과 ABD_R007(복통 후 구토가 이어짐)은 '토했어요'라는 진술이 ABD_006은 확인시키지만 복통 이후라는 시간적 조건이 빠져 ABD_R007은 확인시키지 못하므로 한 방향만 성립한다. ABD_007(설사 동반 여부)과 ABD_R008(구토나 설사 후에도 완화되지 않는 복통)도 마찬가지로 ABD_R008이 '완화되지 않음'이라는 추가 조건을 포함하므로 한 방향만 성립한다. 따라서 두 쌍 모두 서로 다른 조건으로 보아 그룹화하지 않았고 두 항목의 원시 판정을 각각 유지한다.",
+      "source": null
+    },
+    {
+      "id": "VN_023",
+      "type": "schema_change",
+      "note": "v0.3 → v0.4 변경사항. observation_group 필드의 공통 정의와 양방향 판정 규칙, 후처리 사용 원칙을 VN_020~VN_022로 기록했다. CC01에는 해당 그룹이 없어 항목에 필드를 추가하지 않았으며, chief_complaint, usage_policy(model_input_fields 5개 유지), history_items 10개, check_items 13개, 모든 source·source_text·metadata·source_role·needs_review는 v0.3과 동일하다.",
+      "source": null
+    }
+  ]
+}
